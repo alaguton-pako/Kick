@@ -17,7 +17,7 @@ const page = () => {
         <div className="flex flex-col gap-4 w-full ">
           <CustomInput placeholder={"Enter your email address"} />
 
-          <Link href={"/kick"}>
+          <Link href={"/kick-arcade"}>
             <CustomButton fullWidth />
           </Link>
         </div>

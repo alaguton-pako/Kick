@@ -3,16 +3,17 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Icons } from "./Icons";
+import { ScrollArea } from "./ui/scroll-area";
 
 const mainNavItems = [
   {
     name: "Kick Arcade",
-    href: "/kick",
+    href: "/kick-arcade",
     icon: <Icons.Kickarcade />,
   },
   {
     name: "Kick Trivia",
-    href: "/kicktrivia",
+    href: "/kick-trivia",
     icon: <Icons.Kicktrivia />,
   },
   {
@@ -22,7 +23,7 @@ const mainNavItems = [
   },
   {
     name: "Win & cash",
-    href: "/wincash",
+    href: "/win-cash",
     icon: <Icons.Wincash />,
   },
   {
@@ -54,62 +55,74 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <div className="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0 bg-[#111829]">
+    <div className="hidden md:flex md:w-[320px] md:flex-col md:fixed md:inset-y-0 border-r border-[#f8f8ff] px-6 h-screen relative">
+      {/* Minimize Arrow Icon */}
+      <div className="absolute top-6 right-[-15px] cursor-pointer">
+      <Icons.ArrowIn />
+      </div>
       {/* Logo at top */}
       <div className="flex items-center justify-center py-6 px-4">
         <Icons.Logo />
       </div>
 
-      {/* Bonus Card Section */}
-      <div className="mx-4 mb-6 p-4 rounded-lg bg-[#171E2F]">
-        <div className="flex items-center justify-between">
-          <span className="text-white font-medium">Bonus</span>
-          <div className="flex items-center">
-            <span className="text-yellow-400 font-bold mr-2">500</span>
-            <Icons.Wincash />
+      <ScrollArea className="p-3 bg-[#111829] flex flex-col gap-3 rounded-lg">
+        {/* Bonus Card Section */}
+        <div className="bg-[#171E2F] rounded-lg p-2">
+          <div className="mx-4 rounded-lg bg-[#171E2F]">
+            <div className="flex justify-between items-center">
+              <Icons.Coin />
+              <div className="flex flex-col gap-1">
+                <span className="font-semibold text-md text-white">Bonus</span>
+                <span className="text-[#616161] text-xs">
+                  Get everyday extra points
+                </span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-
-      {/* Main Navigation */}
-      <div className="flex-grow px-4 pb-4">
-        <nav className="space-y-2">
-          {mainNavItems.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className={`flex items-center px-4 py-3 rounded-lg ${
-                pathname === item.href
-                  ? "bg-[#FF197533] text-white"
-                  : "text-gray-400 hover:bg-[#171E2F] hover:text-white"
-              }`}
-            >
-              <div className="mr-3">{item.icon}</div>
-              <span className="font-medium">{item.name}</span>
-            </Link>
-          ))}
-        </nav>
-      </div>
-
-      {/* Bottom Navigation */}
-      <div className="mt-auto px-4 pb-6">
-        <nav className="space-y-2">
-          {bottomNavItems.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className={`flex items-center px-4 py-3 rounded-lg ${
-                pathname === item.href
-                  ? "bg-[#FF197533] text-white"
-                  : "text-gray-400 hover:bg-[#171E2F] hover:text-white"
-              }`}
-            >
-              <div className="mr-3">{item.icon}</div>
-              <span className="font-medium">{item.name}</span>
-            </Link>
-          ))}
-        </nav>
-      </div>
+        {/* Main Navigation */}
+        <div className="bg-[#171E2F] rounded-lg p-2">
+          <div className="flex-grow pb-2">
+            <nav className="space-y-2">
+              {mainNavItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`flex items-center pl-6 py-3 rounded-lg ${
+                    pathname === item.href
+                      ? "bg-[#FF197533] text-white"
+                      : "text-gray-400 hover:bg-[#171E2F] hover:text-white"
+                  }`}
+                >
+                  <div className="mr-3">{item.icon}</div>
+                  <span className="font-medium">{item.name}</span>
+                </Link>
+              ))}
+            </nav>
+          </div>
+        </div>
+        {/* Bottom Navigation */}
+        <div className="bg-[#171E2F] rounded-lg p-2">
+          <div className="mt-auto pb-6">
+            <nav className="space-y-2">
+              {bottomNavItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`flex items-center px-4 py-3 rounded-lg ${
+                    pathname === item.href
+                      ? "bg-[#FF197533] text-white"
+                      : "text-gray-400 hover:bg-[#171E2F] hover:text-white"
+                  }`}
+                >
+                  <div className="mr-3">{item.icon}</div>
+                  <span className="font-medium">{item.name}</span>
+                </Link>
+              ))}
+            </nav>
+          </div>
+        </div>
+      </ScrollArea>
     </div>
   );
 }

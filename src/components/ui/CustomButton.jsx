@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "./button";
 import { cn } from "@/lib/utils"; // assuming you're using cn utility
 
-const CustomButton = ({ fullWidth = false }) => {
+const CustomButton = ({ fullWidth = false, text = "CONTINUE" }) => {
   return (
     <Button 
       className={cn(
@@ -12,7 +12,7 @@ const CustomButton = ({ fullWidth = false }) => {
         fullWidth && "w-full"
       )}
     >
-      <span className="font-bungee font-bold">CONTINUE</span>
+      <span className="font-bungee font-bold">{text}</span>
     </Button>
   );
 };

@@ -124,4 +124,11 @@
 }
 
 
+.masked {
+  mask-image: url('/maskTemp.svg'); /* the SVG defines the shape */
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: top;
+}
+
 

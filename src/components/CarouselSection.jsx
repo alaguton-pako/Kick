@@ -12,22 +12,27 @@ import CustomButton from "./ui/CustomButton";
 import AddFavButton from "./AddFavButton";
 import Rating from "./Rating";
 import Image from "next/image";
+import mask from "../../public/perfectBg.webp";
+import monsterReal from "../../public/monsterReal.png";
+import fortnite from "../../public/fortnite.png";
+import runied from "../../public/ruinedBanner.png";
 
 const items = [
   {
     title: "Ruined King",
     description:
       "There's a lot to learn about LoL, so we'll start with the essentials. Explore the guide below for an overview of the most popular game mode",
+    ratingBg: "red",
+    hero: monsterReal,
+    rating: "9,2",
   },
   {
-    title: "Battle for Runeterra",
-    description:
-      "Choose your champions and lead the charge in a legendary conflict spanning the continent.",
-  },
-  {
-    title: "The Spirit Realm",
-    description:
-      "Enter a mystical world where the balance between light and dark hangs by a thread.",
+    title: "Fortnite",
+  description:
+      "There's a lot to learn about LoL, so we'll start with the essentials. Explore the guide below for an overview of the most popular game mode",
+    ratingBg: "blue",
+    hero: fortnite,
+    rating: "9,4",
   },
 ];
 
@@ -45,33 +50,25 @@ export const CarouselSection = () => {
         <CarouselContent className="">
           {items.map((item, index) => (
             <CarouselItem key={index} className="basis-[100%] sm:basis-[70%]">
-              <div className="h-[400px] rounded-xl p-9 bg-gradient-to-br from-[#0d3b3f] via-[#113a60] to-[#0b0c2a] shadow-lg text-white flex flex-col justify-between relative">
-                {/* Rating in top-left corner */}
-                <div className="absolute top-0 left-0 -translate-x-2 -translate-y-2 z-10">
-                  <Rating />
+              <div className="h-[400px] rounded-xl p-9 shadow-lg text-white flex flex-col justify-between relative rounded-b-2xl ">
+                <div className="absolute left-0 right-0 bottom-0 top-0 rounded-b-2xl overflow-hidden">
+                  <Image src={mask} alt="Background 1" className="masked" />
                 </div>
 
-                {/* Side-by-side background images */}
-                <div className="absolute inset-0 flex items-center justify-center z-0">
-                  <div className="flex items-center">
-                    <div className="">
-                      <Image
-                        src="/monsterReal.png"
-                        alt="Background 1"
-                        height={3500}
-                        width={1500}
-                      />
-                    </div>
-                    <div className="">
-                      <Image
-                        src="/ruinedBanner.png"
-                        alt="Background 2"
-                        height={1000}
-                        width={1000}
-                      />
-                    </div>
-                  </div>
+                {/* Rating in top-left corner */}
+                <div className="absolute top-0 left-0">
+                  <Rating rating={item.rating}/>
                 </div>
+                <Image
+                  src={item.hero}
+                  alt="Background 1"
+                  className="absolute left-5 h-[100%] scale-110 w-auto -translate-y-[11%]"
+                />
+                <Image
+                  src={runied}
+                  alt="Background 2"
+                  className="absolute h-auto w-auto max-w-[400px] right-1 top-8"
+                />
 
                 {/* Content overlay */}
                 <div className="relative z-10 flex flex-col h-full">

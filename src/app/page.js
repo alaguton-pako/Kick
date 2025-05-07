@@ -15,7 +15,6 @@ export default function Home() {
 
     const splashTimer = setTimeout(() => {
       setStage("detect");
-
       // Set welcome timer only after entering detect stage
       const detectTimer = setTimeout(() => setStage("welcome"), 3000);
       return () => clearTimeout(detectTimer);

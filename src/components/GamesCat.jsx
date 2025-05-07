@@ -2,9 +2,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Icons } from "./Icons";
+import CustomButton from "./ui/CustomButton";
 
 const GamesCat = ({ imageSrc, gameTitle, isFirstCard = false }) => {
-  // const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <>
@@ -51,6 +52,50 @@ const GamesCat = ({ imageSrc, gameTitle, isFirstCard = false }) => {
           </div>
         </div>
       </div>
+      {/* modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+          <div className="shadow-lg  max-w-[80%] w-full flex h-[80vh]">
+            <div className="hidden md:block flex-1 relative h-full">
+              <Image
+                src="/monsterPrev.png"
+                alt="Game preview"
+                fill
+                className="object-contain"
+              />
+            </div>
+            <div className="flex-1 ">
+              <div className="bg-white p-8 flex flex-col gap-4">
+                <div className="flex items-center justify-between">
+                  <h1 className="text-lg text-[#060D1F]">🎮 BIOMUTANT</h1>
+                  <div className="hover:cursor-pointer" onClick={() => setIsModalOpen(false)}>
+                    <Icons.CloseIcon />
+                  </div>
+                </div>
+                <div>
+                  <Image
+                    src={"/biomutantLarge.png"}
+                    height={300}
+                    width={300}
+                    alt="image"
+                  />
+                </div>
+                <p className="font-semibold text-[#060D1F]">
+                  Get ready to fight, mutate, and survive!
+                </p>
+                <p className="text-[#060D1F] text-sm">
+                  Dive into the post-apocalyptic world of Biomutant — an
+                  action-packed arcade game where your skills evolve with every
+                  battle
+                </p>
+                <div>
+                  <CustomButton text="PLAY NOW" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };

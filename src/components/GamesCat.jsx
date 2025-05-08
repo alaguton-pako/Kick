@@ -11,11 +11,11 @@ const GamesCat = ({ imageSrc, gameTitle, isFirstCard = false }) => {
     <>
       {/* Game Card */}
       <div
-        className="col-span-12 sm:col-span-6 lg:col-span-3 h-[300px] flex flex-col cursor-pointer hover:scale-[1.02] transition-transform duration-200"
+        className="col-span-12 sm:col-span-6 lg:col-span-3 h-auto sm:h-[300px] flex flex-col cursor-pointer hover:scale-[1.02] transition-transform duration-200"
         onClick={() => setIsModalOpen(true)}
       >
         {/* Card image */}
-        <div className="relative h-[80%] group">
+        <div className="relative w-full h-[200px] sm:h-[80%] group">
           <Image
             src={imageSrc || "/biomutantLarge.png"}
             alt={gameTitle || "game"}
@@ -31,7 +31,7 @@ const GamesCat = ({ imageSrc, gameTitle, isFirstCard = false }) => {
         </div>
 
         {/* Card content */}
-        <div className="flex-1 flex justify-between items-center bg-[#151C2F] p-4 rounded-b-lg">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 bg-[#151C2F] p-4 rounded-b-lg">
           <div>
             <span className="px-3 py-1 rounded-lg bg-[#EA3D17] text-xs font-medium text-white">
               NEW
@@ -52,6 +52,7 @@ const GamesCat = ({ imageSrc, gameTitle, isFirstCard = false }) => {
           </div>
         </div>
       </div>
+
       {/* modal */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">

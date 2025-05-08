@@ -62,7 +62,7 @@ export const CarouselSection = () => {
                 <Image
                   src={item.hero}
                   alt="Background 1"
-                  className="absolute left-5 h-[100%] scale-110 w-auto -translate-y-[11%]"
+                  className="absolute left-5 h-[100%] scale-0 md:scale-110 w-auto -translate-y-[11%]"
                 />
                 <Image
                   src={runied}

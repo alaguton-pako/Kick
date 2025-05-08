@@ -1,73 +1,78 @@
-"use client";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { MenuIcon, XIcon } from "lucide-react";
+import { Icons } from "./Icons";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Icons } from "./Icons";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
-
-const mainNavItems = [
-  {
-    name: "Kick Arcade",
-    href: "/kick-arcade",
-    icon: <Icons.Kickarcade />,
-  },
-  {
-    name: "Kick Trivia",
-    href: "/kick-trivia",
-    icon: <Icons.Kicktrivia />,
-  },
-  {
-    name: "Leaderboard",
-    href: "/leaderboard",
-    icon: <Icons.Leaderboard />,
-  },
-  {
-    name: "Win & cash",
-    href: "/win-cash",
-    icon: <Icons.Wincash />,
-  },
-  {
-    name: "Invite a freind",
-    href: "/invite-freinds",
-    icon: <Icons.Invitefreind />,
-  },
-  {
-    name: "Support",
-    href: "/support",
-    icon: <Icons.Support />,
-  },
-];
-
-const bottomNavItems = [
-  {
-    name: "Profile",
-    href: "/",
-    icon: <Icons.Profile />,
-  },
-  {
-    name: "Settings",
-    href: "/",
-    icon: <Icons.Settings />,
-  },
-];
-
-export function Sidebar() {
+export function MobileSideBar() {
   const pathname = usePathname();
+  const mainNavItems = [
+    {
+      name: "Kick Arcade",
+      href: "/kick-arcade",
+      icon: <Icons.Kickarcade />,
+    },
+    {
+      name: "Kick Trivia",
+      href: "/kick-trivia",
+      icon: <Icons.Kicktrivia />,
+    },
+    {
+      name: "Leaderboard",
+      href: "/leaderboard",
+      icon: <Icons.Leaderboard />,
+    },
+    {
+      name: "Win & cash",
+      href: "/win-cash",
+      icon: <Icons.Wincash />,
+    },
+    {
+      name: "Invite a freind",
+      href: "/invite-freinds",
+      icon: <Icons.Invitefreind />,
+    },
+    {
+      name: "Support",
+      href: "/support",
+      icon: <Icons.Support />,
+    },
+  ];
 
+  const bottomNavItems = [
+    {
+      name: "Profile",
+      href: "/",
+      icon: <Icons.Profile />,
+    },
+    {
+      name: "Settings",
+      href: "/",
+      icon: <Icons.Settings />,
+    },
+  ];
   return (
-    <div className="hidden xl:flex xl:w-[320px] xl:flex-col xl:fixed xl:inset-y-0 border-r border-[#f8f8ff] px-6 h-screen relative">
-      {/* Minimize Arrow Icon */}
-      <div className="absolute top-6 right-[-15px] cursor-pointer">
-        <Icons.ArrowIn />
-      </div>
-        {/* Logo at top */}
-        <div className="flex items-center justify-center pt-6 pb-2">
+    <Sheet>
+      <SheetTrigger asChild>
+        <div className="p-2 bg-[#171E2F] rounded-lg">
+          <MenuIcon size={18} color="white" />
+        </div>
+      </SheetTrigger>
+      <SheetContent>
+        <div className="flex items-center justify-center mt-3 p-2">
           <Icons.Logo />
         </div>
-        <div className="p-3 bg-[#111829] flex flex-col gap-2 rounded-lg">
+        <div className="px-3 sm:px-8 bg-[#111829] flex flex-col gap-2 rounded-lg">
           {/* Bonus Card Section */}
           <div className="bg-[#171E2F] rounded-lg p-2 mb-2">
             <div className="mx-4 rounded-lg bg-[#171E2F]">
-              <div className="flex justify-between items-center">
+              <div className="flex items-center gap-3">
                 <Icons.Coin />
                 <div className="flex flex-col gap-1">
                   <span className="font-semibold text-md text-white">
@@ -82,13 +87,13 @@ export function Sidebar() {
           </div>
           {/* Main Navigation */}
           <div className="bg-[#171E2F] rounded-lg p-2 mb-2">
-            <div className="flex-grow pb-2">
+            <div className="flex-grow pb-1">
               <nav className="space-y-2">
                 {mainNavItems.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`flex items-center pl-6 py-3 rounded-lg ${
+                    className={`flex items-center pl-6 py-2 rounded-lg ${
                       pathname === item.href
                         ? "bg-[#FF197533] text-white"
                         : "text-gray-400 hover:bg-[#171E2F] hover:text-white"
@@ -103,13 +108,13 @@ export function Sidebar() {
           </div>
           {/* Bottom Navigation */}
           <div className="bg-[#171E2F] rounded-lg p-2">
-            <div className="mt-auto pb-6">
-              <nav className="space-y-2">
+            <div className="mt-auto pb-4">
+              <nav className="space-y-1">
                 {bottomNavItems.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`flex items-center px-4 py-3 rounded-lg ${
+                    className={`flex items-center px-4 py-2 rounded-lg ${
                       pathname === item.href
                         ? "bg-[#FF197533] text-white"
                         : "text-gray-400 hover:bg-[#171E2F] hover:text-white"
@@ -123,6 +128,7 @@ export function Sidebar() {
             </div>
           </div>
         </div>
-    </div>
+      </SheetContent>
+    </Sheet>
   );
 }

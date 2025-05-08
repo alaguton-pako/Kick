@@ -4,6 +4,11 @@ import CustomInput from "@/components/ui/CustomInput";
 import CustomButton from "@/components/ui/CustomButton";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Kick | Onboarding",
+  description: "Kick arcade dashboard",
+};
+
 const page = () => {
   return (
     <div className="h-screen w-screen flex items-center justify-center text-white px-6">
@@ -18,7 +23,7 @@ const page = () => {
           <CustomInput placeholder={"Enter your last name"} />
           <CustomInput placeholder={"Enter your email address"} />
           <Link href={"/signup"}>
-            <CustomButton fullWidth/>
+            <CustomButton fullWidth />
           </Link>
         </div>
       </div>

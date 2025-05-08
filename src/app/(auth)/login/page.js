@@ -4,6 +4,12 @@ import CustomInput from "@/components/ui/CustomInput";
 import CustomButton from "@/components/ui/CustomButton";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Kick | Login",
+  description: "Kick arcade dashboard",
+};
+
+
 const page = () => {
   return (
     <div className="h-screen w-screen flex items-center justify-center text-white">

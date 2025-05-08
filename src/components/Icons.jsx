@@ -5,9 +5,8 @@ export const Icons = {
     <Image
       src="/kickLogo.png"
       alt="logo"
-      width={50}
-      height={30}
-      className="h-8 w-auto"
+      width={80}
+      height={80}
     />
   ),
   Kickarcade: () => (

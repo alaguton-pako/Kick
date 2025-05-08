@@ -28,7 +28,7 @@ const items = [
   },
   {
     title: "Fortnite",
-  description:
+    description:
       "There's a lot to learn about LoL, so we'll start with the essentials. Explore the guide below for an overview of the most popular game mode",
     ratingBg: "blue",
     hero: fortnite,
@@ -50,24 +50,24 @@ export const CarouselSection = () => {
         <CarouselContent className="">
           {items.map((item, index) => (
             <CarouselItem key={index} className="basis-[100%] lg:basis-[70%]">
-              <div className="h-[400px] rounded-xl p-9 shadow-lg text-white flex flex-col justify-between relative rounded-b-2xl ">
+              <div className="h-[400px] rounded-xl p-10 md:p-9 shadow-lg text-white flex flex-col justify-between relative rounded-b-2xl ">
                 <div className="absolute left-0 right-0 bottom-0 top-0 rounded-b-2xl overflow-hidden">
                   <Image src={mask} alt="Background 1" className="masked" />
                 </div>
 
                 {/* Rating in top-left corner */}
-                <div className="absolute top-0 left-0">
-                  <Rating rating={item.rating}/>
+                <div className="absolute top-0 left-0 md:top-0 md:left-0 lg:top-[-10px] lg:left-[-10px] xl:top-0 xl:left-[1px]">
+                  <Rating rating={item.rating} />
                 </div>
                 <Image
                   src={item.hero}
                   alt="Background 1"
-                  className="absolute left-5 h-[100%] scale-0 md:scale-110 w-auto -translate-y-[11%]"
+                  className="absolute left-5 h-[100%] w-[400px] md:scale-110 md:w-auto -translate-y-[11%]"
                 />
                 <Image
                   src={runied}
                   alt="Background 2"
-                  className="absolute h-auto w-auto max-w-[400px] right-1 top-8"
+                  className="absolute h-auto max-w-[200px] md:max-w-[400px] right-1 top-8"
                 />
 
                 {/* Content overlay */}

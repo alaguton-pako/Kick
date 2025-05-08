@@ -3,6 +3,11 @@ import Image from "next/image";
 import CustomInput from "@/components/ui/CustomInput";
 import CustomButton from "@/components/ui/CustomButton";
 import Link from "next/link";
+export const metadata = {
+  title: "Kick | Signup",
+  description: "Kick arcade dashboard",
+};
+
 
 const page = () => {
   return (

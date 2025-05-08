@@ -3,11 +3,11 @@ import Image from "next/image";
 import underRing from "../../public/elipseRingUnder.png";
 const Rating = ({ rating }) => {
   return (
-    <div className="relative w-[120px] h-[120px]">
+    <div className="relative w-[110px] h-[110px] md:w-[120px] md:h-[120px]">
       <Image
         src={underRing}
         alt="Background 3"
-        className="absolute h-auto w-auto scale-130 top-[-2px] left-[8px]"
+        className="absolute h-auto w-auto scale-130 top-[-14px] left-[-5px] md:top-[-10px] md:left-[-10px] lg:top-[-10px] lg:left-[-5px] xl:top-[-2px] xl:left-[8px]"
       />
 
       {/* Main ring with centered text */}

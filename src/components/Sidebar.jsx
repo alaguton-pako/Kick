@@ -55,7 +55,7 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <div className="hidden md:flex md:w-[320px] md:flex-col md:fixed md:inset-y-0 border-r border-[#f8f8ff] px-6 h-screen relative">
+    <div className="hidden xl:flex xl:w-[320px] xl:flex-col xl:fixed xl:inset-y-0 border-r border-[#f8f8ff] px-6 h-screen relative">
       {/* Minimize Arrow Icon */}
       <div className="absolute top-6 right-[-15px] cursor-pointer">
       <Icons.ArrowIn />

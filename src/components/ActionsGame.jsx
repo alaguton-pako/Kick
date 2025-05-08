@@ -15,6 +15,10 @@ const ActionsGame = () => {
       imageSrc: "/arcadegeon.png",
       gameTitle: "ARCADEGEDDON",
     },
+    {
+      imageSrc: "/arcadegeon.png",
+      gameTitle: "ARCADEGEDDON",
+    },
   ];
   return (
     <div className="my-4 flex flex-col gap-4">

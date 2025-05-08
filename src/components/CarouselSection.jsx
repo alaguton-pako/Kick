@@ -49,7 +49,7 @@ export const CarouselSection = () => {
       >
         <CarouselContent className="">
           {items.map((item, index) => (
-            <CarouselItem key={index} className="basis-[100%] sm:basis-[70%]">
+            <CarouselItem key={index} className="basis-[100%] lg:basis-[70%]">
               <div className="h-[400px] rounded-xl p-9 shadow-lg text-white flex flex-col justify-between relative rounded-b-2xl ">
                 <div className="absolute left-0 right-0 bottom-0 top-0 rounded-b-2xl overflow-hidden">
                   <Image src={mask} alt="Background 1" className="masked" />

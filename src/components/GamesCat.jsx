@@ -11,7 +11,7 @@ const GamesCat = ({ imageSrc, gameTitle, isFirstCard = false }) => {
     <>
       {/* Game Card */}
       <div
-        className="col-span-4 h-[300px] flex flex-col cursor-pointer hover:scale-[1.02] transition-transform duration-200"
+        className="col-span-12 sm:col-span-6 lg:col-span-3 h-[300px] flex flex-col cursor-pointer hover:scale-[1.02] transition-transform duration-200"
         onClick={() => setIsModalOpen(true)}
       >
         {/* Card image */}
@@ -55,7 +55,7 @@ const GamesCat = ({ imageSrc, gameTitle, isFirstCard = false }) => {
       {/* modal */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
-          <div className="shadow-lg  max-w-[80%] w-full flex h-[80vh]">
+          <div className="shadow-lg  max-w-[80%] w-full flex h-[90vh]">
             <div className="hidden md:block flex-1 relative h-full">
               <Image
                 src="/monsterPrev.png"
@@ -64,11 +64,14 @@ const GamesCat = ({ imageSrc, gameTitle, isFirstCard = false }) => {
                 className="object-contain"
               />
             </div>
-            <div className="flex-1 ">
+            <div className="flex-1 h-full">
               <div className="bg-white p-8 flex flex-col gap-4">
                 <div className="flex items-center justify-between">
                   <h1 className="text-lg text-[#060D1F]">🎮 BIOMUTANT</h1>
-                  <div className="hover:cursor-pointer" onClick={() => setIsModalOpen(false)}>
+                  <div
+                    className="hover:cursor-pointer"
+                    onClick={() => setIsModalOpen(false)}
+                  >
                     <Icons.CloseIcon />
                   </div>
                 </div>

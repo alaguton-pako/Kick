@@ -67,7 +67,7 @@ export const CarouselSection = () => {
                 <Image
                   src={runied}
                   alt="Background 2"
-                  className="absolute h-auto max-w-[200px] md:max-w-[400px] right-1 top-8"
+                  className="absolute h-auto max-w-[400px] right-1 top-8"
                 />
 
                 {/* Content overlay */}

@@ -13,7 +13,7 @@ const Rating = ({ rating }) => {
       {/* Main ring with centered text */}
       <div className="absolute top-0 left-0 w-full h-full">
         <Image
-          src={rating == "9,2" ? "/elpiseRing.png" : "/ringBlue.png"}
+          src={rating === "9,2" ? "/elipseRingBlue.png" : "/elipseRingRed.png"}
           alt="main ring"
           fill
           className="object-contain"

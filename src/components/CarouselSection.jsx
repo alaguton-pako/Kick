@@ -85,7 +85,7 @@ export const CarouselSection = () => {
                       <h2 className="text-4xl font-semibold mb-2 drop-shadow-2xl">
                         {item.title}
                       </h2>
-                      <p className="text-xs text-white max-w-[50%] drop-shadow-2xl">
+                      <p className="text-xs max-w-[50%] drop-shadow-2xl">
                         {item.description}
                       </p>
                       <div className="flex items-center gap-3">

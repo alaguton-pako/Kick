@@ -55,9 +55,9 @@ const GamesCat = ({ imageSrc, gameTitle, isFirstCard = false }) => {
 
       {/* modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
-          <div className="shadow-lg  max-w-[80%] w-full flex h-[90vh]">
-            <div className="hidden md:block flex-1 relative h-full">
+        <div className="hidden md:fixed inset-0 bg-black/70 md:flex items-center justify-center z-50 p-4">
+          <div className="shadow-lg max-w-[80%] w-full max-h-[90vh] flex overflow-hidden">
+            <div className="hidden md:block flex-1 relative min-h-[200px]">
               <Image
                 src="/monsterPrev.png"
                 alt="Game preview"
@@ -65,10 +65,13 @@ const GamesCat = ({ imageSrc, gameTitle, isFirstCard = false }) => {
                 className="object-contain"
               />
             </div>
-            <div className="flex-1 h-full">
-              <div className="bg-white p-8 flex flex-col gap-4">
+            <div className="flex-1 overflow-y-auto">
+              <div className="bg-white p-8 flex flex-col gap-4 h-full">
+                {/* Rest of your existing content remains exactly the same */}
                 <div className="flex items-center justify-between">
-                  <h1 className="text-lg text-[#060D1F] bungee">🎮 BIOMUTANT</h1>
+                  <h1 className="text-lg text-[#060D1F] bungee">
+                    🎮 BIOMUTANT
+                  </h1>
                   <div
                     className="hover:cursor-pointer"
                     onClick={() => setIsModalOpen(false)}

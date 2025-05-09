@@ -141,48 +141,45 @@ const GameCatMobile = () => {
         </div>
       ))}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
-          <div className="shadow-lg max-w-[80%] flex h-[80vh]">
-            <div className="hidden md:block flex-1 relative h-full">
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4 overflow-y-auto md:hidden">
+          <div className="shadow-lg w-full max-w-4xl max-h-[90vh] flex flex-col md:flex-row bg-white rounded-lg overflow-hidden">
+            <div className="hidden md:block flex-1 relative min-h-[200px]">
               <Image
                 src="/monsterPrev.png"
                 alt="Game preview"
                 fill
-                className="object-contain"
+                className="object-cover"
               />
             </div>
-            <div className="h-full flex justify-center items-center md:flex-1">
-              <div className="rounded-lg bg-white p-8 flex flex-col gap-4 md:rounded-none">
-                <div className="flex items-center justify-between">
-                  <h1 className="text-lg text-[#060D1F] bungee">
-                    🎮 BIOMUTANT
-                  </h1>
-                  <div
-                    className="hover:cursor-pointer"
-                    onClick={() => setIsModalOpen(false)}
-                  >
-                    <Icons.CloseIcon />
-                  </div>
+            <div className="flex-1 overflow-y-auto p-6">
+              <div className="flex items-center justify-between">
+                <h1 className="text-lg text-[#060D1F] bungee">🎮 BIOMUTANT</h1>
+                <div
+                  className="hover:cursor-pointer"
+                  onClick={() => setIsModalOpen(false)}
+                >
+                  <Icons.CloseIcon />
                 </div>
-                <div>
-                  <Image
-                    src={"/biomutantLarge.png"}
-                    height={300}
-                    width={300}
-                    alt="image"
-                  />
-                </div>
-                <p className="font-semibold text-[#060D1F] bungee">
-                  Get ready to fight, mutate, and survive!
-                </p>
-                <p className="text-[#060D1F] text-sm">
-                  Dive into the post-apocalyptic world of Biomutant — an
-                  action-packed arcade game where your skills evolve with every
-                  battle.
-                </p>
-                <div className="flex items-center justify-center md:justify-start">
-                  <CustomButton text="PLAY NOW" />
-                </div>
+              </div>
+              <div className="flex justify-center my-4">
+                <Image
+                  src={"/biomutantLarge.png"}
+                  height={250}
+                  width={250}
+                  alt="image"
+                  className="object-contain"
+                />
+              </div>
+              <p className="font-semibold text-[#060D1F] bungee">
+                Get ready to fight, mutate, and survive!
+              </p>
+              <p className="text-[#060D1F] text-sm mb-4">
+                Dive into the post-apocalyptic world of Biomutant — an
+                action-packed arcade game where your skills evolve with every
+                battle.
+              </p>
+              <div className="flex items-center justify-center md:justify-start">
+                <CustomButton text="PLAY NOW" />
               </div>
             </div>
           </div>

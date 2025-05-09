@@ -68,7 +68,7 @@ const GamesCat = ({ imageSrc, gameTitle, isFirstCard = false }) => {
             <div className="flex-1 h-full">
               <div className="bg-white p-8 flex flex-col gap-4">
                 <div className="flex items-center justify-between">
-                  <h1 className="text-lg text-[#060D1F]">🎮 BIOMUTANT</h1>
+                  <h1 className="text-lg text-[#060D1F] bungee">🎮 BIOMUTANT</h1>
                   <div
                     className="hover:cursor-pointer"
                     onClick={() => setIsModalOpen(false)}
@@ -84,7 +84,7 @@ const GamesCat = ({ imageSrc, gameTitle, isFirstCard = false }) => {
                     alt="image"
                   />
                 </div>
-                <p className="font-semibold text-[#060D1F]">
+                <p className="font-semibold text-[#060D1F] bungee">
                   Get ready to fight, mutate, and survive!
                 </p>
                 <p className="text-[#060D1F] text-sm">

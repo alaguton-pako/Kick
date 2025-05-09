@@ -81,11 +81,11 @@ export const CarouselSection = () => {
 
                   {/* Card content */}
                   <div className="h-full flex flex-col justify-end">
-                    <div className="flex flex-col gap-2">
-                      <h2 className="text-3xl font-semibold mb-2">
+                    <div className="flex flex-col gap-2 z-50">
+                      <h2 className="text-4xl font-semibold mb-2 drop-shadow-2xl">
                         {item.title}
                       </h2>
-                      <p className="text-xs text-white/80 max-w-[50%]">
+                      <p className="text-xs text-white max-w-[50%] drop-shadow-2xl">
                         {item.description}
                       </p>
                       <div className="flex items-center gap-3">

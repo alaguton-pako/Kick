@@ -142,7 +142,7 @@ const GameCatMobile = () => {
       ))}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
-          <div className="shadow-lg max-w-[80%] w-full flex h-[90vh]">
+          <div className="shadow-lg max-w-[80%] flex h-[80vh]">
             <div className="hidden md:block flex-1 relative h-full">
               <Image
                 src="/monsterPrev.png"
@@ -151,10 +151,12 @@ const GameCatMobile = () => {
                 className="object-contain"
               />
             </div>
-            <div className="flex-1 h-full">
-              <div className="bg-white p-8 flex flex-col gap-4">
+            <div className="h-full flex justify-center items-center md:flex-1">
+              <div className="rounded-lg bg-white p-8 flex flex-col gap-4 md:rounded-none">
                 <div className="flex items-center justify-between">
-                  <h1 className="text-lg text-[#060D1F]">🎮 BIOMUTANT</h1>
+                  <h1 className="text-lg text-[#060D1F] bungee">
+                    🎮 BIOMUTANT
+                  </h1>
                   <div
                     className="hover:cursor-pointer"
                     onClick={() => setIsModalOpen(false)}
@@ -170,7 +172,7 @@ const GameCatMobile = () => {
                     alt="image"
                   />
                 </div>
-                <p className="font-semibold text-[#060D1F]">
+                <p className="font-semibold text-[#060D1F] bungee">
                   Get ready to fight, mutate, and survive!
                 </p>
                 <p className="text-[#060D1F] text-sm">
@@ -178,7 +180,7 @@ const GameCatMobile = () => {
                   action-packed arcade game where your skills evolve with every
                   battle.
                 </p>
-                <div>
+                <div className="flex items-center justify-center md:justify-start">
                   <CustomButton text="PLAY NOW" />
                 </div>
               </div>

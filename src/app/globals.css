@@ -1,7 +1,5 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-
-@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -120,6 +118,7 @@
   body {
     @apply text-foreground;
     background-color: #060D1F; /* Ensure fallback background color */
+    font-family: var(--font-red-hat-display), sans-serif;
   }
 }
 
@@ -131,4 +130,7 @@
   mask-position: top;
 }
 
+.bungee {
+  font-family: var(--font-bungee), sans-serif;
+}
 

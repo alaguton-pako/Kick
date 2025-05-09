@@ -12,7 +12,7 @@ const CustomButton = ({ fullWidth = false, text = "CONTINUE" }) => {
         fullWidth && "w-full"
       )}
     >
-      <span className="font-bungee font-bold">{text}</span>
+      <span className="bungee font-bold">{text}</span>
     </Button>
   );
 };

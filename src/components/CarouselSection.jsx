@@ -50,19 +50,19 @@ export const CarouselSection = () => {
         <CarouselContent className="">
           {items.map((item, index) => (
             <CarouselItem key={index} className="basis-[100%] lg:basis-[70%]">
-              <div className="h-[400px] rounded-xl p-10 md:p-9 shadow-lg text-white flex flex-col justify-between relative rounded-b-2xl ">
+              <div className="h-[400px] rounded-xl p-10 md:p-9 xl:py-14 2xl:p-9  shadow-lg text-white flex flex-col justify-between relative rounded-b-2xl ">
                 <div className="absolute left-0 right-0 bottom-0 top-0 rounded-b-2xl overflow-hidden">
                   <Image src={mask} alt="Background 1" className="masked" />
                 </div>
 
                 {/* Rating in top-left corner */}
-                <div className="absolute top-0 left-0 md:top-0 md:left-0 lg:top-[-10px] lg:left-[-10px] xl:top-0 xl:left-[1px]">
+                <div className="absolute top-0 left-0 md:top-0 md:left-0 lg:top-[-10px] lg:left-[-10px] 2xl:top-0 2xl:left-[1px]">
                   <Rating rating={item.rating} />
                 </div>
                 <Image
                   src={item.hero}
                   alt="Background 1"
-                  className="absolute left-5 h-[100%] w-[400px] md:scale-110 md:w-auto -translate-y-[11%]"
+                  className="absolute left-5 xl:left-0 2xl:left-0 h-[100%] w-[400px] md:scale-110 xl:scale-90 2xl:scale-110 md:w-auto -translate-y-[11%]"
                 />
                 <Image
                   src={runied}

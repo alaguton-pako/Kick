@@ -7,7 +7,7 @@ const Rating = ({ rating }) => {
       <Image
         src={underRing}
         alt="Background 3"
-        className="absolute h-auto w-auto scale-130 top-[-14px] left-[-5px] md:top-[-10px] md:left-[-10px] lg:top-[-10px] lg:left-[-5px] xl:top-[-2px] xl:left-[8px]"
+        className="absolute h-auto w-auto scale-130 top-[-14px] left-[-5px] md:top-[-10px] md:left-[-10px] lg:top-[-10px] lg:left-[-5px] 2xl:top-[-2px] 2xl:left-[8px]"
       />
 
       {/* Main ring with centered text */}
